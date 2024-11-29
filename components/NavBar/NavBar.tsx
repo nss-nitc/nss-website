@@ -16,7 +16,7 @@ const sections: sectionsProps[] = [
 export default function NavBar() {
   return (
     <>
-      <nav className="my-2 hidden md:flex flex-row justify-center items-center">
+      <nav className="p-3 hidden md:flex flex-row justify-center items-center">
         <ul className="flex justify-center items-center gap-4">
           {sections.map((section) => (
             <Link className="px-2 py-1" href={section.url}>

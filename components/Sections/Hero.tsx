@@ -10,7 +10,7 @@ export default function Hero() {
             <p className="text-[4vw] md:text-[2.25vw] lg:text-[1.5vw]">
               WELCOME TO
             </p>
-            <h1 className="text-[6vw] md:text-[4.5vw] lg:text-[3vw] font-semibold text-red-700">
+            <h1 className="text-[6vw] md:text-[4.5vw] lg:text-[3vw] font-semibold text-primary">
               NATIONAL SERVICE SCHEME
             </h1>
             <p className="text-[4vw] md:text-[2.25vw] lg:text-[1.5vw] tracking-wider">

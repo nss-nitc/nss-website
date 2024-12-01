@@ -8,7 +8,12 @@ export default {
     "./util/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#ef4444",
+        secondary: "#303983",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

@@ -8,7 +8,7 @@ interface sectionsProps {
 const sections: sectionsProps[] = [
   { title: "HOME", url: "#home" },
   { title: "ABOUT US", url: "#about" },
-  { title: "PROJECTS", url: "#projects" },
+  { title: "EVENTS", url: "#events" },
   { title: "SERVICES", url: "#services" },
   { title: "CONTACT", url: "#contact" },
 ];

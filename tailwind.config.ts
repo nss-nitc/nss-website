@@ -7,7 +7,12 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "serif"],
+        mom: ["Momcake", "serif"],
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

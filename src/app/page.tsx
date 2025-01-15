@@ -1,7 +1,9 @@
+import Events from "@/components/Events/Events";
+
 export default function page() {
   return (
     <>
-      <p>Hello World</p>
+      <Events />
     </>
   );
 }

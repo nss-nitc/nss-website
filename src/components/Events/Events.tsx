@@ -1,37 +1,60 @@
+import { eventsList } from "./EventsData";
+
 export default function Events() {
+  const events = eventsList.slice(0, 5);
   return (
-    <section className="flex flex-col bg-[#F9F3E6]">
-      <div className="flex w-screen justify-center py-10">
-        <h1 className="font-extrabold text-[50px] Poppins"> Our Events</h1>
+    <div className="flex flex-col bg-[#F9F3E6] overflow-hidden">
+      <div className="flex w-screen justify-center py-5 md:py-10">
+        <h1 className="font-extrabold text-[30px] md:text-[50px] Poppins">
+          Our Events
+        </h1>
       </div>
-      <div className="flex w-screen justify-between ">
-        <div className="flex flex-col w-[55%] justify-center px-8 ps-14 py-8 my-5 gap-2 bg-[#57A2D8] bg-opacity-[54%] rounded-e-xl">
-          <h1 className="Poppins font-bold text-[26px] ">Sneharagam</h1>
-          <p className="Poppins text-[26px] ">
-            Promoting Inclusivity and Diversity, Sneharagam is an initiative
-            that celebrates the talents of children with special needs. We
-            organize events, workshops, and activities that promote inclusivity,
-            diversity, and social acceptance.
-          </p>
-        </div>
-        <div className="flex w-[40%] justify-center items-center my-5 bg-[#57A2D8] rounded-s-xl">
-          <img className="" src="" alt="event" />
-        </div>
-      </div>
-      <div className="flex w-screen justify-between bg-[#F9F3E6] ">
-        <div className="flex w-[40%] justify-center items-center my-5 bg-[#57A2D8] rounded-e-xl">
-          <img src="../../public/images/event-image.svg" alt="event" />
-        </div>
-        <div className="flex flex-col w-[55%] justify-center px-8 ps-14 py-8 my-5 gap-2 bg-[#57A2D8] bg-opacity-[54%] rounded-s-xl">
-          <h1 className="Poppins font-bold text-[26px] ">Sneharagam</h1>
-          <p className="Poppins text-[26px] ">
-            Promoting Inclusivity and Diversity, Sneharagam is an initiative
-            that celebrates the talents of children with special needs. We
-            organize events, workshops, and activities that promote inclusivity,
-            diversity, and social acceptance.
-          </p>
-        </div>
-      </div>
-    </section>
+      {events.map((event, index) => {
+        if (index % 2 === 0) {
+          return (
+            <div className="flex flex-col md:flex-row justify-between ">
+              <div className="flex flex-col w-screen md:w-[55%] justify-center px-8 md:ps-14 py-8 md:my-5 gap-2 bg-[#57A2D8] bg-opacity-[54%] rounded-t-xl md:rounded-e-xl">
+                <h1 className="Poppins font-bold text-[25px] md:text-[30px] ">{event.name}</h1>
+                <p className="Poppins text-[20px] lg:text-[26px] ">
+                  {event.paragraph}
+                </p>
+              </div>
+              <div className="flex w-screen md:w-[40%] justify-center items-center mb-6 md:my-5 ">
+                <img
+                  className="w-full h-fit rounded-t-none rounded-b-xl md:rounded-s-xl"
+                  src={event.imageUrl}
+                  alt={event.imageAlt}
+                />
+              </div>
+            </div>
+          );
+        } else {
+          return (
+            <div className="flex flex-col md:flex-row justify-between">
+              <div className="hidden w-[40%] justify-center items-center md:my-5 md:flex">
+                <img
+                  className=" w-full h-fit rounded-e-xl"
+                  src={event.imageUrl}
+                  alt={event.imageAlt}
+                />
+              </div>
+              <div className="flex flex-col w-screen md:w-[55%] justify-center px-8 md:ps-14 py-8 md:my-5 gap-2 bg-[#57A2D8] bg-opacity-[54%] rounded-t-xl md:rounded-s-xl">
+                <h1 className="Poppins font-bold text-[26px] md:text-[30px] ">{event.name}</h1>
+                <p className="Poppins text-[20px] lg:text-[26px] ">
+                  {event.paragraph}
+                </p>
+              </div>
+              <div className="flex w-screen justify-center items-center mb-6 md:hidden">
+                <img
+                  className=" w-full h-fit rounded-b-xl"
+                  src={event.imageUrl}
+                  alt={event.imageAlt}
+                />
+              </div>
+            </div>
+          );
+        }
+      })}
+    </div>
   );
 }

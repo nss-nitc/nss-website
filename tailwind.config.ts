@@ -12,7 +12,11 @@ export default {
         poppins: ["Poppins", "serif"],
         mom: ["Momcake", "serif"],
       },
+      screens: {
+        xs: "400px",
+      },
     },
   },
+
   plugins: [],
 } satisfies Config;

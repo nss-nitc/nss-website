@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const images = [
@@ -12,35 +12,61 @@ const images = [
 
 
 const Gallery = () => {
-    const [index,setIndex] = useState(0);
+    const [index,setIndex] = useState(1);
+    const [preIndex,setPreIndex] = useState(2);
     const [isSliding,setIsSliding] = useState(false);
 
-    console.log(index)
+    console.log(index,preIndex)
+
+    const loopImages = [images[images.length - 1],...images,images[0]];
+    
 
     const prevClick = () => {
         if (isSliding) return;
         setIsSliding(true);
         setTimeout(() => {
-        setIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
-        );
-        setIsSliding(false);
+          setPreIndex(index);
+          setIndex((prevIndex) => 
+            prevIndex === 0 ? loopImages.length - 1 : prevIndex - 1
+          
+          );
+          
+
+          setIsSliding(false);
         }, 300);
     };
 
     const nextClick = () => {
         console.log("hello");
+        
         if (isSliding) return;
         setIsSliding(true);
+     
         setTimeout(() => {
             console.log("hi");
+            setPreIndex(index);
             setIndex((prevIndex) =>
-                prevIndex === images.length - 1 ? 0 : prevIndex +1
+                prevIndex === loopImages.length - 1 ? 0 : prevIndex +1
             );
             setIsSliding(false);
         }, 300);
     };
 
+    useEffect(()=>{
+      if(index === loopImages.length-1 && preIndex == loopImages.length-2){
+        setTimeout(() => {
+          setPreIndex(index);
+          setIndex(1);
+        }, 300);
+      }
+      else if(index === 0 && preIndex === 1){
+        setTimeout(() => {
+          setPreIndex(index);
+          setIndex(loopImages.length-2);
+        }, 300);
+      }
+      
+    },[index])
     
 
       return (
@@ -60,14 +86,16 @@ const Gallery = () => {
             <div>
                 {/* Image Slider */}
                 <div
-                className={`flex transition-transform duration-300 ease-in-out`}
+              className={`flex ${(index === 1 && preIndex === loopImages.length - 1) || (index === loopImages.length-2 && preIndex === 0)  ?'' : 'transition-transform duration-300 ease-in-out'}`}
+
                 style={{
-                    transform: `translateX(-${index * 100}%)`, // change to shift images
+                  transform: ` translateX(-${index * 100}%)`,
+                  // change to shift images
                     display: "flex",
                 // width: `${images.length * 100}%`, // make sure the container width is correct
                 }}
                 >
-                    {images.map((image, i) => (
+                    {loopImages.map((image, i) => (
                         <img
                         key={i}
                         src={image}

@@ -1,7 +1,9 @@
+import Gallery from "@/app/Gallery"
+
 export default function page() {
   return (
     <>
-      <p>Hello World</p>
+      <Gallery></Gallery>
     </>
   );
 }

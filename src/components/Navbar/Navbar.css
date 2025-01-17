@@ -1,0 +1,158 @@
+
+header {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .left-section {
+    width: 30%;
+    background-color: #202A44; 
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    color: white;
+    padding: 30px 20px 40px;
+  }
+  
+  .left-section .nss-logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 25px;
+    border-radius: 30px;
+  
+  }
+  
+  .left-section .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .right-section {
+    width: 70%;
+    background-color: #FEFBEA; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px 40px;
+  }
+  
+  .hamburger-icon {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .right-section nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .right-section nav,
+  .right-section .login-btn {
+    margin-left: auto; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .right-section nav a {
+    color: #001f3f; 
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .right-section nav a:hover {
+    color: #ffa500; 
+  }
+  
+  /* Login Button Styling */
+  .right-section .login-btn a {
+    background-color: #001f3f; 
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .right-section .login-btn a:hover {
+    background-color: #000d1a; 
+    color: white;
+  }
+  
+  
+  @media (max-width: 768px) {
+  
+    header {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .left-section {
+      width: 100%;
+      padding: 15px 10px;
+      justify-content: flex-start; 
+    }
+  
+    .right-section.open {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start; 
+       padding: 15px 10px;
+      position: relative;  
+      
+    }
+  
+    .hamburger-icon {
+      display: block; 
+      margin-left: auto;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  
+    .right-section.closed{
+      display: none;
+    }
+  
+    .right-section nav {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: 0;
+      width: 100%;
+      /* gap: 5px; */
+    }
+  
+    .right-section nav.open {
+      display: flex;
+      /* gap: 5px; */
+      
+    }
+  
+    .right-section nav a {
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 10px;
+      /* gap: 20px; */
+      width: 100%;
+    }
+  
+    .right-section .login-btn {
+      /* padding: 10px 0; */
+      margin-left: 0;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  

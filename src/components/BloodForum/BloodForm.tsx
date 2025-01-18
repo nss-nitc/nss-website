@@ -27,11 +27,11 @@ export default function BloodForm() {
           </Link>
         </div>
       </nav>
-      <div className="flex flex-col w-screen items-center py-10 gap-10 md:gap-20 bg-[#F9F3E6]">
-        <div className="flex w-[80%] md:w-[60%] lg:w-[40%] rounded-2xl bg-[#C67979] ">
+      <div className="flex flex-col w-screen items-center py-20 gap-10 md:gap-20 bg-[#F9F3E6]">
+        <div className="flex w-[80%] md:w-[60%] lg:w-[40%] rounded-2xl bg-[#C67979] shadow-2xl">
           <Form />
         </div>
-        <div className="flex flex-col w-[80%] py-10 h-fit items-center  rounded-2xl bg-[#FFFF] ">
+        <div className="flex flex-col w-[80%] py-10 h-fit items-center  rounded-2xl bg-[#FFFF] shadow-2xl">
           <h1 className="flex pb-4 w-full md:pb-10 text-3xl lg:text-5xl justify-center text-[#8D5555] Poppins font-bold">
             Why Donate Blood?
           </h1>
@@ -83,7 +83,7 @@ export default function BloodForm() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row w-[80%] py-10 px-10 h-fit lg:justify-between items-center rounded-2xl bg-[#D49B9B] ">
+        <div className="flex flex-col lg:flex-row w-[80%] py-10 px-10 h-fit lg:justify-between items-center rounded-2xl bg-[#D49B9B] shadow-2xl ">
           <h1 className="  text-white text-3xl md:text-5xl font-bold pb-4 md:pb-10 w-full lg:w-[15%] flex lg:hidden">
             Who can donate?
           </h1>
@@ -102,7 +102,7 @@ export default function BloodForm() {
             Who can donate?
           </h1>
         </div>
-        <div className="flex flex-col lg:flex-row w-[80%] py-10 px-10 h-fit justify-between items-center rounded-2xl bg-[#8D5555] ">
+        <div className="flex flex-col lg:flex-row w-[80%] py-10 px-10 h-fit justify-between items-center rounded-2xl bg-[#8D5555] shadow-2xl ">
           <h1 className="text-white text-3xl lg:text-5xl font-bold pb-4 md:pb-10 w-full  lg:w-[15%]">
             Who Can’t Donate?
           </h1>

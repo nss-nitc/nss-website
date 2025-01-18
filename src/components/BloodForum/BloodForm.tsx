@@ -27,7 +27,7 @@ export default function BloodForm() {
           </Link>
         </div>
       </nav>
-      <div className="flex flex-col w-screen items-center py-20 gap-10 md:gap-20 bg-[#F9F3E6]">
+      <div className="flex flex-col w-screen items-center py-10 md:py-20 gap-10 md:gap-20 bg-[#F9F3E6]">
         <div className="flex w-[80%] md:w-[60%] lg:w-[40%] rounded-2xl bg-[#C67979] shadow-2xl">
           <Form />
         </div>

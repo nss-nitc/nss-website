@@ -31,8 +31,8 @@ export default function BloodForm() {
         <div className="flex w-[80%] md:w-[60%] lg:w-[40%] rounded-2xl bg-[#C67979] shadow-2xl">
           <Form />
         </div>
-        <div className="flex flex-col w-[80%] py-10 h-fit items-center  rounded-2xl bg-[#FFFF] shadow-2xl">
-          <h1 className="flex pb-4 w-full md:pb-10 text-3xl lg:text-5xl justify-center text-[#8D5555] Poppins font-bold">
+        <div className="flex flex-col w-[80%] px-10 py-10 h-fit items-center  rounded-2xl bg-[#FFFF] shadow-2xl">
+          <h1 className="flex pb-4 w-full text-wrap md:pb-10 text-3xl lg:text-5xl justify-center text-[#8D5555] Poppins font-bold">
             Why Donate Blood?
           </h1>
           <div className="flex flex-col lg:flex-row w-full Poppins font-bold text-xl text-[#8D5555] ">

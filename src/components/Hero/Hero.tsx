@@ -31,7 +31,7 @@ export default function Hero() {
             className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute bottom-10 left-5 text-3xl sm:text-4xl font-semibold text-white z-10">
-            <img src="images/book icon.svg" className="my-7"></img>
+            <img src="images/book Icon.svg" className="my-7"></img>
             Lets Teach
           </div>
 

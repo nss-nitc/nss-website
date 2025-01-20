@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Nav = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -33,9 +33,8 @@ const Nav = () => {
 
       {/* Right Section */}
       <div
-        className={`${
-          isMenuOpen ? "flex" : "hidden"
-        } flex-col md:flex md:flex-row md:w-2/3 items-center px-5 py-4`}
+        className={`${isMenuOpen ? "flex" : "hidden"
+          } flex-col md:flex md:flex-row md:w-2/3 items-center px-5 py-4`}
       >
         <nav className="flex flex-col md:flex-row w-full md:w-auto items-center justify-end gap-5 ml-auto">
           <Link
@@ -82,4 +81,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const images = ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg"];
 
@@ -128,7 +129,9 @@ const Gallery = () => {
               onTouchEnd={handleTouchEnd}
             >
               {loopImages.map((image, i) => (
-                <img
+                <Image
+                  width={3840}
+                  height={2400}
                   key={i}
                   src={image}
                   alt={`Slide ${i}`}
@@ -137,7 +140,6 @@ const Gallery = () => {
               ))}
             </div>
             <p className="p-1"></p>
-			
           </div>
         </div>
         <button
@@ -158,24 +160,24 @@ const Gallery = () => {
           </svg>
         </button>
       </div>
-	  <div className="flex justify-center mt-4 space-x-2">
-              {loopImages.map((_, i) => {
-                // Skip rendering the first and last dots
-                if (i === 0 || i === loopImages.length - 1) return null;
-                return (
-                  <button
-                    key={i}
-                    className={` h-2 w-2 mg:w-3 mg:h-3 lg:w-3 lg:h-3 rounded-full ${
-                      (i === 1 && index === loopImages.length - 1) ||
-                      (index === 0 && i === loopImages.length - 2) ||
-                      i === index
-                        ? "bg-gray-800"
-                        : "bg-[#C0E8EB]"
-                    }`}
-                  />
-                );
-              })}
-            </div>
+      <div className="flex justify-center mt-4 space-x-2">
+        {loopImages.map((_, i) => {
+          // Skip rendering the first and last dots
+          if (i === 0 || i === loopImages.length - 1) return null;
+          return (
+            <button
+              key={i}
+              className={` h-2 w-2 mg:w-3 mg:h-3 lg:w-3 lg:h-3 rounded-full ${
+                (i === 1 && index === loopImages.length - 1) ||
+                (index === 0 && i === loopImages.length - 2) ||
+                i === index
+                  ? "bg-gray-800"
+                  : "bg-[#C0E8EB]"
+              }`}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

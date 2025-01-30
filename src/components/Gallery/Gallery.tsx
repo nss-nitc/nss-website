@@ -59,6 +59,16 @@ const Gallery = () => {
     }
   }, [index]);
 
+  useEffect(() => {
+	const res = setInterval(() =>{
+		nextClick();
+	},1500)
+
+	return () =>{
+		clearInterval(res)
+	}
+  },[index])
+
   const handleDragStart = (e: React.MouseEvent<HTMLDivElement>) => {
     setStartX(e.pageX);
   };
@@ -88,11 +98,11 @@ const Gallery = () => {
       <h2 className="text-3xl font-bold mb-6 text-slate-800 font-poppins md:text-5xl">
         Gallery
       </h2>
-      <div className="flex flex-row justify-center items-center space-x-4">
+      <div className="flex flex-row justify-center items-center">
         {/* Navigation Buttons */}
         <button
           onClick={prevClick}
-          className="hidden mg:block lg:block rounded-full p-2"
+          className="hidden sm:block rounded-full p-2"
         >
           <svg
             className="h-7 w-7 md:h-12 md:w-12 sm:h-10 sm:w-10"
@@ -107,7 +117,7 @@ const Gallery = () => {
             ></path>
           </svg>
         </button>
-        <div className="bg-[#C0C9DB] relative w-full max-w-3xl overflow-hidden border border-slate-950 rounded-xl min-w-56">
+        <div className="bg-[#C0C9DB] flex flex-row relative w-full max-w-3xl overflow-hidden border border-slate-950 rounded-xl min-w-56 ml-0">
           <div>
             {/* Image Slider */}
             <div
@@ -144,7 +154,7 @@ const Gallery = () => {
         </div>
         <button
           onClick={nextClick}
-          className="hidden mg:block lg:block  rounded-full p-2"
+          className="hidden sm:block rounded-full p-2"
         >
           <svg
             className="h-7 w-7 md:h-12 md:w-12 sm:h-10 sm:w-10"
